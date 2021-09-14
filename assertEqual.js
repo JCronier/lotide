@@ -1,10 +1,5 @@
 const assertEqual = function(actual, expected) {
-  let arrayStatus = false;
-  if (Array.isArray(actual) && Array.isArray(expected) && actual.length === expected.length) {
-    arrayStatus = actual.every((element, index) => element === expected[index]);
-  }
-
-  if (actual === expected || arrayStatus) {
+  if (actual === expected) {
     console.log(`🟢🟢🟢 Assertion Passed: ${actual} === ${expected}`);
   } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
