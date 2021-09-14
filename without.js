@@ -14,6 +14,7 @@ const without = function(source, itemsToRemove) {
     }
   }
   return result;
+  // return source.filter(element => !itemsToRemove.includes(element));
 };
 
 const assertArraysEqual = function(actual, expected) {
