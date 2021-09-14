@@ -18,8 +18,3 @@ const eqArrays = function(firstArray, secondArray) {
   }
   return true;
 };
-
-assertEqualArrays([], [1]);
-assertEqualArrays([1, 2, 3], [3, 2, 1]);
-assertEqualArrays(["1", "2", "3"], ["1", "2", "3"]);
-assertEqualArrays(["1", "2", "3"], ["1", "2", 3]);
