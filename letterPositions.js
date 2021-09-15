@@ -35,7 +35,7 @@ const letterPositions = function(sentence) {
   let positions = {};
 
   for (const [index, element] of sentence.split("").entries()) {
-    
+
     if (!positions[element]) {
       positions[element] = [];
     }
