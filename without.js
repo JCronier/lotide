@@ -1,17 +1,8 @@
 const without = function(source, itemsToRemove) {
   let result = [];
-  let flag = false;
   for (let element of source) {
-    flag = false;
-    for (let item of itemsToRemove) {
-      if (item === element) {
-        flag = true;
-        break;
-      }
-    }
-    if (!flag) {
+    if (!itemsToRemove.includes(element))
       result.push(element);
-    }
   }
   return result;
   // return source.filter(element => !itemsToRemove.includes(element));
@@ -39,7 +30,8 @@ const eqArrays = function(firstArray, secondArray) {
 };
 
 console.log(without([1, 2, 3], [1])); // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
+console.log(without(["1", "2", "3"], [])); // => ["1", "2"]
+console.log(without([], [1, 2, "3"])); // => ["1", "2"]
 
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
