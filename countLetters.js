@@ -13,8 +13,10 @@ const countLetters = function(sentence) {
 
   for (const letter of sentence.split(" ").join("")) {
 
-    if (!letterCounts[letter]) 
+    if (!letterCounts[letter]) {
       letterCounts[letter] = 0;
+    }
+     
     
     letterCounts[letter]++;
   }
