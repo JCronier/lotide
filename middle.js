@@ -30,6 +30,7 @@ const middle = function(array) {
   }
 };
 
+console.log(middle([1, 2]) === []);
 assertArraysEqual(middle([1,2,3]), []); // => []
 assertArraysEqual(middle([1, 2]), []); // => []
 assertArraysEqual(middle([1, 2, 3]), [2]); // => [2]
