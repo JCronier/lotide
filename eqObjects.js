@@ -5,39 +5,21 @@ const assertEqual = function(actual, expected) {
   }
 
   console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  
-};
-
-const eqArrays = function(firstArray, secondArray) {
-  if (firstArray.length !== secondArray.length) {
-    return false;
-  } else {
-    for (let i = 0; i < firstArray.length; i++) {
-      if (firstArray[i] !== secondArray[i]) {
-        return false;
-      }
-    }
-  }
-  return true;
 };
 
 const eqObjects = function(object1, object2) {
   if (Object.keys(object1).length !== Object.keys(object2).length) {
-
     return false;
   }
 
   for (const key of Object.keys(object1)) {
-
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-
-      if (eqArrays(object1[key], object2[key])) {
-        continue;
+      continue;
+    } else if (typeof object1[key] === "object" && typeof object2[key] === "object") {
+      if (!eqObjects(object1[key], object2[key])) {
+        return false;
       }
-      return false;
-    }
-
-    if (object1[key] !== object2[key]) {
+    } else if (object1[key] !== object2[key]) {
       return false;
     }
   }
@@ -68,5 +50,17 @@ const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 assertEqual(eqObjects(cd, dc), true); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false
+const cd2 = { c: "1", 3: {2: "3", 4: 3, 6: 4} };
+
+const cd3 = { c: "1", 3: {2: "3", 4: 3, 6: 4} };
+
+assertEqual(eqObjects(cd2, cd3), true);
+
+const test1 = { c: "1", 3: {2: "3", 4: { c: "1", 3: {2: "3", 4: { c: "1", 3: {2: "3", 4: 3, 6: 4} }, 6: 4} }, 6: 4} };
+const test2 = { c: "1", 3: {2: "3", 5: { c: "1", 3: {2: "3", 4: { c: "1", 3: {2: "3", 4: 3, 6: 4} }, 6: 4} }, 6: 4} };
+assertEqual(eqObjects(test1, test2), false);
+
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
+
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
