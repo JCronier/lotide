@@ -1,0 +1,26 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "A lighthouse labs project to mimic the lodash library",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fr3chtoa45t/lotide.git"
+  },
+  "author": "Jordan Cronier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fr3chtoa45t/lotide/issues"
+  },
+  "homepage": "https://github.com/fr3chtoa45t/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1"
+  }
+}

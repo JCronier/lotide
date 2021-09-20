@@ -5,5 +5,5 @@ const tail = require("../tail");
 
 // TEST CODE
 
-assertArraysEqual(tail(["Hello"]), ["ello"]);
+assertArraysEqual(tail(["H", "e", "l", "l", "o"]), ["e", "l", "l", "o"]);
 assertArraysEqual(tail(["Hello", "Lighthouse", "Labs", "Rocks"]), ["Lighthouse", "Labs", "Rocks"]);
