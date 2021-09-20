@@ -1,14 +1,11 @@
+// assertEqual.js
+
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`🟢🟢🟢 Assertion Passed: ${actual} === ${expected}`);
-    return;
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
-
-  console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  
 };
 
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual("Bootcamp", "Bootcamp");
-assertEqual(1, 1);
-assertEqual(1, 2);
+module.exports = assertEqual;
