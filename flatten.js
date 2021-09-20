@@ -1,3 +1,5 @@
+// flatten.js
+
 const flatten = function(nestedArrays) {
   let result = [];
   for (let element of nestedArrays) {
@@ -12,25 +14,6 @@ const flatten = function(nestedArrays) {
   return result;
 };
 
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`🟢🟢🟢 Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6], 7]),[1, 2, 3, 4, 5, 6]);
 
-const eqArrays = function(firstArray, secondArray) {
-  if (firstArray.length !== secondArray.length) {
-    return false;
-  } else {
-    for (let i = 0; i < firstArray.length; i++) {
-      if (firstArray[i] !== secondArray[i]) {
-        return false;
-      }
-    }
-  }
-  return true;
-};
-
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6], 7]),[1, 2, 3, 4, 5, 6]);
+module.exports = flatten;

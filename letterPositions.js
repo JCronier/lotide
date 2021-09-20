@@ -1,35 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`🟢🟢🟢 Assertion Passed: ${actual} === ${expected}`);
-    return;
-  }
-
-  console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  
-};
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`🟢🟢🟢 Assertion Passed: ${actual} === ${expected}`);
-    return;
-  }
-
-  console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-};
-
-const eqArrays = function(firstArray, secondArray) {
-  if (firstArray.length !== secondArray.length) {
-    return false;
-  }
-  
-  for (let i = 0; i < firstArray.length; i++) {
-    if (firstArray[i] !== secondArray[i]) {
-      return false;
-    }
-  }
-
-  return true;
-};
+// letterPositions.js
 
 const letterPositions = function(sentence) {
   let positions = {};
@@ -70,23 +39,25 @@ const verifyPositions = {
 
 };
 
-const helloPos = {
-  h: [0],
-  e: [1],
-  l: [2, 3],
-  o: [4]
-};
+// const helloPos = {
+//   h: [0],
+//   e: [1],
+//   l: [2, 3],
+//   o: [4]
+// };
 
-let positions = letterPositions("lighthouse in the house");
+// let positions = letterPositions("lighthouse in the house");
 
-assertEqual(Object.keys(positions).length, Object.keys(verifyPositions).length);
-for (const key in positions) {
-  assertArraysEqual(positions[key], verifyPositions[key]);
-}
+// assertEqual(Object.keys(positions).length, Object.keys(verifyPositions).length);
+// for (const key in positions) {
+//   assertArraysEqual(positions[key], verifyPositions[key]);
+// }
 
-positions = letterPositions("hello");
+// positions = letterPositions("hello");
 
-assertEqual(Object.keys(positions).length, Object.keys(helloPos).length);
-for (const key in positions) {
-  assertArraysEqual(positions[key], helloPos[key]);
-}
+// assertEqual(Object.keys(positions).length, Object.keys(helloPos).length);
+// for (const key in positions) {
+//   assertArraysEqual(positions[key], helloPos[key]);
+// }
+
+module.exports = letterPositions;
