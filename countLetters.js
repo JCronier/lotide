@@ -16,6 +16,7 @@ const countLetters = function(sentence) {
   return letterCounts;
 };
 
+// TEST CODE
 // const verifyCounts = {
 //   l: 1,
 //   i: 2,

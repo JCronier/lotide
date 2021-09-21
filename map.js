@@ -9,6 +9,8 @@ const map = function(array, callback) {
   return results;
 };
 
+// TEST CODE
+
 // const words = ["sound", "control", "to", "major", "tom"];
 // const numbers = [4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144];
 // const bools = [true, false, false, true, false];

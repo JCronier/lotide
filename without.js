@@ -4,6 +4,8 @@ const without = function(source, itemsToRemove) {
   return source.filter(element => !itemsToRemove.includes(element));
 };
 
+// TEST CODE
+
 // console.log(without([1, 2, 3], [1])); // => [2, 3]
 // console.log(without(["1", "2", "3"], [])); // => ["1", "2"]
 // console.log(without([], [1, 2, "3"])); // => ["1", "2"]

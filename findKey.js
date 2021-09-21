@@ -2,6 +2,7 @@ const findKey = function(object, callback) {
   return Object.keys(object).find(key => callback(object[key]));
 };
 
+// TEST CODE
 // /* #region  Test Code */
 // assertEqual(findKey({
 //   "Blue Hill": { stars: 1 },

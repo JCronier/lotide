@@ -1,18 +1,7 @@
 // letterPositions.js
 
 const letterPositions = function(sentence) {
-  // let positions = {};
-
-  // for (const [index, element] of sentence.split("").entries()) {
-
-  //   if (!positions[element]) {
-  //     positions[element] = [];
-  //   }
-
-  //   positions[element].push(index);
-  // }
-
-  // New way without for loop
+  let positions = {};
   sentence.split("").forEach((key, index) => {
     if (!positions[key]) {
       positions[key] = [];
@@ -24,6 +13,8 @@ const letterPositions = function(sentence) {
   delete positions[" "];
   return positions;
 };
+
+// TEST CODE
 
 // const verifyPositions = {
 //   l: [ 0 ],

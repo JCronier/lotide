@@ -13,6 +13,4 @@ const assertObjectsEqual = function(actual, expected) {
   console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
 };
 
-// assertObjectsEqual({a: "1", b: "3"}, {a: "1", c: "3"});
-
 module.exports = assertObjectsEqual;

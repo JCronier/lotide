@@ -18,7 +18,8 @@ const countOnly = function(allItems, itemsToCount) {
   return results;
 };
 
-// Test Code
+// TEST CODE
+
 // const firstNames = [
 //   "Karl",
 //   "Salima",

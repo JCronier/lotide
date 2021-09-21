@@ -14,6 +14,8 @@ const takeUntil = function(array, callback) {
   return results;
 };
 
+// TEST CODE
+
 // /* #region  Test Code */
 // const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 // const results1 = takeUntil(data1, x => x < 0);
